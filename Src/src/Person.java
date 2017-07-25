@@ -34,8 +34,19 @@ public class Person {
                 email = person[20];
                 break;
             case 25: //Has a note
+                email = person[20];
+                email2 = person[21];
+                website = person[22];
+                custom = person[23];
+                note = person[24];
                 break;
             case 26: //has a customer type
+                email = person[20];
+                email2 = person[21];
+                website = person[22];
+                custom = person[23];
+                note = person[24];
+                type = person[25];
                 break;
             default:
                 name = person[0];
