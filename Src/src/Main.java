@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 
@@ -59,21 +61,26 @@ public class Main {
                  */
                 ArrayList buf = new ArrayList();
                 String[] buffer = inputLine.split(",");
+                Queue queue = new LinkedList();
 
+                String number = buffer[1];
+                Person temp = new Person(buffer);
+                queue.add(temp);
+
+                lookAhead(number,queue,input);
 
 
 
 
                 inputLine = input.readLine();
             }
-
-
         }
-        catch (IOException io)
-        {
+        catch (IOException io) {
             System.out.print("File not found " + io.getMessage());
         }
-
+    }
+    public static void lookAhead(String number, Queue queue, BufferedReader input)
+    {
 
     }
 }

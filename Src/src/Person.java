@@ -2,20 +2,41 @@ package src;
 
 public class Person {
 
-    private String name, number,
+    private String name,number,
     discount,
     tax,
     firstName, lastName, title,
     company,
     dob,
     addr1, addr2, city, province, postal, country,
-    home,work,fax,pager,mobile,
-    email,email2,
-    website,
-    custom,
-    note,
-    type = "";
+    home;
+    private String work = "";
+    private String fax = "";
+    private String pager = "";
+    private String mobile = "";
+    private String email = "";
+    private String email2 = "";
+    private String website = "";
+    private String custom = "";
+    private String note = "";
+    private String type = "";
     public Person(String[] person) {
+        name = person[0];
+        number = person[1];
+        discount = person[2];
+        tax = person[3];
+        firstName = person[4];
+        lastName = person[5];
+        title = person[6];
+        company = person[7];
+        dob = person[8];
+        addr1 = person[9];
+        addr2 = person[10];
+        city = person[11];
+        province = person[12];
+        postal = person[13];
+        country = person[14];
+        home = person[15];
         switch (person.length)
         {
             case 17: //Has work no Email
