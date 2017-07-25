@@ -2,13 +2,10 @@ package src;
 
 public class Person {
 
-    private String name,
-    number,
+    private String name, number,
     discount,
     tax,
-    firstName,
-    lastName,
-    title,
+    firstName, lastName, title,
     company,
     dob,
     addr1, addr2, city, province, postal, country,
@@ -17,7 +14,7 @@ public class Person {
     website,
     custom,
     note,
-    type = " ";
+    type = "";
     public Person(String[] person) {
         switch (person.length)
         {
@@ -77,5 +74,11 @@ public class Person {
                 company +","+ dob +","+ addr1 +","+ addr2 +","+ city +","+ province +","+ postal +","+
                 country +","+ home +","+ work +","+ fax +","+ pager +","+ mobile +","+ email +","+
                 email2 +","+ website +","+ custom +","+ note +","+ type;
+    }
+    public String toString(String type){
+            return firstName +","+ lastName +","+ title +","+
+                    company +","+ dob +","+ addr1 +","+ addr2 +","+ city +","+ province +","+ postal +","+
+                    country +","+ home +","+ work +","+ fax +","+ pager +","+ mobile +","+ email +","+
+                    email2 +","+ website +","+ custom +","+ note +",,,"+ type +",,,";
     }
 }
