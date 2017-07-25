@@ -64,7 +64,7 @@ public class Person {
     public String toString(String type){
             return firstName +","+ lastName +","+ title +","+
                     company +","+ dob +","+ addr1 +","+ addr2 +","+ city +","+ province +","+ postal +","+
-                    country +","+ home +","+ work +","+ fax +","+ pager +","+ mobile +","+ email +","+
+                    country +",,,,,,"+ email +","+
                     email2 +","+ website +","+ custom +","+ note +",,,"+ type +",,,";
     }
 

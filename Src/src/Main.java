@@ -67,14 +67,17 @@ public class Main {
 
                 lookAhead(number,stack,input);
 
-                checkSimilar(stack);
+                checkSimilar(stack,merge,upload);
 
                 inputLine = input.readLine();
             }
+            merge.close();
+            upload.close();
         }
         catch (IOException io) {
             System.out.print("File not found " + io.getMessage());
         }
+
     }
 
     public static void lookAhead(String number, Stack<Person> stack, BufferedReader input) throws IOException
@@ -95,7 +98,7 @@ public class Main {
         }
     }
 
-    public static void checkSimilar(Stack<Person> stack)
+    public static void checkSimilar(Stack<Person> stack,BufferedWriter merge,BufferedWriter upload) throws IOException
     {
         ArrayList<Person> list = new ArrayList<Person>();
 
@@ -109,10 +112,13 @@ public class Main {
             if(list.get(0).getLastName().equals(list.get(i).getLastName()))
             {
                 System.out.println(list.get(i).toString());
+                System.out.println(list.get(0).toString());
+                merge.write(list.get(i).toString()+ "\n" +list.get(0) +"\n");
             }
             else
             {
                 Scanner user = new Scanner(System.in);
+                System.out.println("\nCurrent people: "+list.get(i)+"\n"+list.get(0)+"\n");
                 System.out.println("Current Email:"+list.get(i).getEmail()+" Original:"+list.get(0).getEmail());
                 System.out.println("This older than original? "+list.get(i).getCreated() + " Original:" + list.get(0).getCreated());
                 String choice = user.nextLine();
@@ -120,14 +126,15 @@ public class Main {
                     case "Y":
                     case "y":
                         System.out.println(list.get(i).toString("yes"));
+                        upload.write(list.get(i).toString("yes"));
                         break;
                     case "N":
                     case "n":
                         System.out.println(list.get(0).toString("yes"));
+                        upload.write(list.get(0).toString("yes"));
                         break;
                     default:
-                        System.out.println(list.get(i).toString("yes"));
-                        System.out.println(list.get(0).toString("yes"));
+                        merge.write(list.get(i).toString()+ "\n" +list.get(0) +"\n");
                         break;
                 };
 
