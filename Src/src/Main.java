@@ -113,14 +113,26 @@ public class Main {
             else
             {
                 Scanner user = new Scanner(System.in);
-                System.out.println(list.get(i).toString());
-                user.nextLine();
+                System.out.println("Current Email:"+list.get(i).getEmail()+" Original:"+list.get(0).getEmail());
+                System.out.println("This older than original? "+list.get(i).getCreated() + " Original:" + list.get(0).getCreated());
+                String choice = user.nextLine();
+                switch (choice){
+                    case "Y":
+                    case "y":
+                        System.out.println(list.get(i).toString("yes"));
+                        break;
+                    case "N":
+                    case "n":
+                        System.out.println(list.get(0).toString("yes"));
+                        break;
+                    default:
+                        System.out.println(list.get(i).toString("yes"));
+                        System.out.println(list.get(0).toString("yes"));
+                        break;
+                };
+
             }
         }
-        System.out.println(list.get(0));
-
-
-
     }
 
 }

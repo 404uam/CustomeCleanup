@@ -71,4 +71,12 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
