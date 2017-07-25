@@ -102,4 +102,8 @@ public class Person {
                     country +","+ home +","+ work +","+ fax +","+ pager +","+ mobile +","+ email +","+
                     email2 +","+ website +","+ custom +","+ note +",,,"+ type +",,,";
     }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

@@ -62,7 +62,7 @@ public class Main {
                  */
                 ArrayList buf = new ArrayList();
                 String[] buffer = inputLine.split(",");
-                Stack stack = new Stack();
+                Stack<Person> stack = new Stack();
 
                 String number = buffer[1];
                 Person temp = new Person(buffer);
@@ -70,8 +70,7 @@ public class Main {
 
                 lookAhead(number,stack,input);
 
-
-
+                checkSimilar(stack);
 
                 inputLine = input.readLine();
             }
@@ -80,9 +79,36 @@ public class Main {
             System.out.print("File not found " + io.getMessage());
         }
     }
-    public static void lookAhead(String number, Stack stack, BufferedReader input)
+
+    public static void lookAhead(String number, Stack<Person> stack, BufferedReader input) throws IOException
     {
+        input.mark(255);
+        String nextLine = input.readLine();
+
+        String[] buffer = nextLine.split(",");
+
+        if (buffer[1].equals(number))
+        {
+          Person temp = new Person(buffer);
+          stack.add(temp);
+          lookAhead(number,stack,input);
+        }
+        else{
+            input.reset();
+        }
+    }
+
+    public static void checkSimilar(Stack<Person> stack)
+    {
+        ArrayList<Person> list = new ArrayList<Person>();
+
+        while(!stack.empty())
+        {
+            list.add(stack.pop());
+        }
+
 
 
     }
+
 }
