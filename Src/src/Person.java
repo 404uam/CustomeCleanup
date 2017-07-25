@@ -2,7 +2,7 @@ package src;
 
 public class Person {
 
-    String name,
+    private String name,
     number,
     discount,
     tax,
@@ -17,9 +17,8 @@ public class Person {
     website,
     custom,
     note,
-    type = "";
+    type = " ";
     public Person(String[] person) {
-
         switch (person.length)
         {
             case 17: //Has work no Email
@@ -66,7 +65,17 @@ public class Person {
                 country = person[14];
                 home = person[15];
                 break;
-        }
+        };
+    }
 
+    /**
+     *
+     * @return Returns a CSV for the upload format.
+     */
+    public String toString(){
+        return name +","+ number +","+ discount +","+ tax +","+ firstName +","+ lastName +","+ title +","+
+                company +","+ dob +","+ addr1 +","+ addr2 +","+ city +","+ province +","+ postal +","+
+                country +","+ home +","+ work +","+ fax +","+ pager +","+ mobile +","+ email +","+
+                email2 +","+ website +","+ custom +","+ note +","+ type;
     }
 }
