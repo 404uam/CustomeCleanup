@@ -20,6 +20,7 @@ public class Person {
     private String custom = "";
     private String note = "";
     private String type = "";
+    private String created = "";
     public Person(String[] person) {
         name = person[0];
         number = person[1];
@@ -37,6 +38,7 @@ public class Person {
         postal = person[13];
         country = person[14];
         home = person[15];
+        created = person[26];
         switch (person.length)
         {
             case 17: //Has work no Email

@@ -5,10 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
 
@@ -106,6 +103,21 @@ public class Main {
         {
             list.add(stack.pop());
         }
+
+        for(int i = 1; i<list.size(); i++)
+        {
+            if(list.get(0).getLastName().equals(list.get(i).getLastName()))
+            {
+                System.out.println(list.get(i).toString());
+            }
+            else
+            {
+                Scanner user = new Scanner(System.in);
+                System.out.println(list.get(i).toString());
+                user.nextLine();
+            }
+        }
+        System.out.println(list.get(0));
 
 
 
