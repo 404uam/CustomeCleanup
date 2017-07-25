@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -24,8 +25,40 @@ public class Main {
             upload.write(inputLine+"\n");       //Write header for the file
             merge.write(inputLine+"\n");       //Write header for the file
 
-            while(inputLine != null) {
+            inputLine = input.readLine();         //Read start of information
 
+            while(inputLine != null) {
+                /*
+                   Header format
+                   0 - Full Name
+                   1 - Number (unformated)
+                   2 - Discount
+                   3 - Tax
+                   4 - First Name
+                   5 - Last Name
+                   6 - Title
+                   7 - Company
+                   8 - DOB
+                   9 - Address 1
+                   10 - Address 2
+                   11 - City
+                   12 - Province
+                   13 - Postal Code
+                   14 - Country
+                   15 - Home Number
+                   16 - Work
+                   17 - Fax
+                   18 - Pager
+                   19 - Mobile
+                   20 - Email 1
+                   21 - Email 2
+                   22 - Website
+                   23 - Custom
+                   24 - Note
+                   25 - Type
+                 */
+                ArrayList buf = new ArrayList();
+                String[] buffer = inputLine.split(",");
 
 
                 inputLine = input.readLine();
