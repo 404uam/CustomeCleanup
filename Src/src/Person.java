@@ -22,16 +22,38 @@ public class Person {
 
         switch (person.length)
         {
-            case 16: //No Email
+            case 17: //Has work no Email
+                work = person[16];
                 break;
+            case 20: //Has mobile but no email
+                work = person[16];
+                fax = person[17];
+                pager = person[18];
+                mobile = person[19];
             case 21: //Has Email
+                email = person[20];
                 break;
             case 25: //Has a note
                 break;
             case 26: //has a customer type
                 break;
             default:
-                System.out.println("Unexpected person length found in file");
+                name = person[0];
+                number = person[1];
+                discount = person[2];
+                tax = person[3];
+                firstName = person[4];
+                lastName = person[5];
+                title = person[6];
+                company = person[7];
+                dob = person[8];
+                addr1 = person[9];
+                addr2 = person[10];
+                city = person[11];
+                province = person[12];
+                postal = person[13];
+                country = person[14];
+                home = person[15];
                 break;
         }
 
