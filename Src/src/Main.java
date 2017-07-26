@@ -87,7 +87,7 @@ public class Main {
     {
         input.mark(255);
         String nextLine = input.readLine();
-        count++;
+        //count++;
         if(nextLine != null) {
             String[] buffer = nextLine.split(",");
 
@@ -97,7 +97,7 @@ public class Main {
                 lookAhead(number, stack, input, count);
             } else {
                 input.reset();
-                count--;
+                //count--;
             }
         }
     }
@@ -135,7 +135,7 @@ public class Main {
                     case "N":
                     case "n":
                         System.out.println(list.get(0).toString("yes"));
-                        upload.write(list.get(0).toString("yes"));
+                        upload.write(list.get(0).toString("yes")+"\n");
                         break;
                     default:
                         merge.write(list.get(i).toString()+ "\n" +list.get(0) +"\n");

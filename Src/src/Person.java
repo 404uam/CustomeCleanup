@@ -65,7 +65,7 @@ public class Person {
             return firstName +","+ lastName +","+ title +","+
                     company +","+ dob +","+ addr1 +","+ addr2 +","+ city +","+ province +","+ postal +","+
                     country +",,,,,,"+ email +","+
-                    email2 +","+ website +","+ custom +","+ note +",,,"+ type +",,,";
+                    email2 +","+ website +","+ custom +","+ note +",,,"+ this.type +",,,";
     }
 
     public String getLastName() {
