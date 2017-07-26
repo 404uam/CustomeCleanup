@@ -67,9 +67,9 @@ public class Main {
                 stack.add(temp);
 
                 lookAhead(number,stack,input,count);
-                System.out.println(count);
+                //System.out.println(count);
 
-                //checkSimilar(stack,merge,upload);
+                checkSimilar(stack,merge,upload);
 
                 inputLine = input.readLine();
                 count++;
@@ -88,18 +88,17 @@ public class Main {
         input.mark(255);
         String nextLine = input.readLine();
         count++;
+        if(nextLine != null) {
+            String[] buffer = nextLine.split(",");
 
-        String[] buffer = nextLine.split(",");
-
-        if (buffer[1].equals(number))
-        {
-          Person temp = new Person(buffer);
-          stack.add(temp);
-          lookAhead(number,stack,input,count);
-        }
-        else{
-            input.reset();
-            count--;
+            if (buffer[1].equals(number)) {
+                Person temp = new Person(buffer);
+                stack.add(temp);
+                lookAhead(number, stack, input, count);
+            } else {
+                input.reset();
+                count--;
+            }
         }
     }
 
