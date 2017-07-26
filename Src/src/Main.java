@@ -95,7 +95,7 @@ public class Main {
         {
           Person temp = new Person(buffer);
           stack.add(temp);
-          lookAhead(number,stack,input);
+          lookAhead(number,stack,input,count);
         }
         else{
             input.reset();
@@ -114,7 +114,7 @@ public class Main {
 
         for(int i = 1; i<list.size(); i++)
         {
-            if(list.get(0).getLastName().equals(list.get(i).getLastName()))
+            if(list.get(0).getLastName().toLowerCase().equals(list.get(i).getLastName().toLowerCase()))
             {
                 System.out.println(list.get(i).toString());
                 System.out.println(list.get(0).toString());
