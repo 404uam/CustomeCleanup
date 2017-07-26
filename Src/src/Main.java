@@ -27,6 +27,7 @@ public class Main {
 
             inputLine = input.readLine();         //Read start of information
 
+            int count = 1;
             while(inputLine != null) {
                 /*
                    Header format
@@ -65,11 +66,13 @@ public class Main {
                 Person temp = new Person(buffer);
                 stack.add(temp);
 
-                lookAhead(number,stack,input);
+                lookAhead(number,stack,input,count);
+                System.out.println(count);
 
-                checkSimilar(stack,merge,upload);
+                //checkSimilar(stack,merge,upload);
 
                 inputLine = input.readLine();
+                count++;
             }
             merge.close();
             upload.close();
@@ -80,10 +83,11 @@ public class Main {
 
     }
 
-    public static void lookAhead(String number, Stack<Person> stack, BufferedReader input) throws IOException
+    public static void lookAhead(String number, Stack<Person> stack, BufferedReader input,int count) throws IOException
     {
         input.mark(255);
         String nextLine = input.readLine();
+        count++;
 
         String[] buffer = nextLine.split(",");
 
@@ -95,6 +99,7 @@ public class Main {
         }
         else{
             input.reset();
+            count--;
         }
     }
 
